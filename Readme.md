@@ -74,7 +74,7 @@ Every API key will be limited to 100 calls per method a day and expired after 30
 
 ### Step 3. Making your gRPC call
 
-Every prediction except music analysis ('key', 'tempo', 'genre') is based on 1 second decision unit. Your audio input should not be exceeded by 30 seconds length (below 4MB).
+Every prediction except music analysis ('key', 'tempo', 'genre') is based on 1 second decision unit. Your audio input should not be exceeded by 30 seconds length and 4MB size.
 
 The prediction works only what model you run the input through. For example, if you call the music analysis method with speech content, models will returns the predictions that music analysis model knows about.
 
