@@ -20,27 +20,27 @@ Maven example as follows
 ## Making a call
 Example)
 
-  import com.cochlear.ai.CochlearSenseClient;
+        import com.cochlear.ai.CochlearSenseClient;
 
-  public class runner {
+        public class runner {
 
-    public static void main(String[] args) throws Exception{
-      CochlearSenseClient client = new CochlearSenseClient("[YourApiKey]");
-
-
-
-      System.out.println(client.senseEvent("example_event.mp3", "babycry"));
-      System.out.println(client.senseGender("example_event.mp3"));
-      System.out.println(client.senseKey("example_event.mp3"));
-      System.out.println(client.senseTempo("example_event.mp3"));
-      System.out.println(client.senseGenre("example_event.mp3"));
-      System.out.println(client.senseMood("example_event.mp3"));
-      System.out.println(client.senseMSO("example_event.mp3"));
+          public static void main(String[] args) throws Exception{
+            CochlearSenseClient client = new CochlearSenseClient("[YourApiKey]");
 
 
 
-    }
-  }
+            System.out.println(client.senseEvent("example_event.mp3", "babycry"));
+            System.out.println(client.senseGender("example_event.mp3"));
+            System.out.println(client.senseKey("example_event.mp3"));
+            System.out.println(client.senseTempo("example_event.mp3"));
+            System.out.println(client.senseGenre("example_event.mp3"));
+            System.out.println(client.senseMood("example_event.mp3"));
+            System.out.println(client.senseMSO("example_event.mp3"));
+
+
+
+          }
+        }
 
 
 1. Import CochlearSenseClient class from com.cohlear.ai package path
