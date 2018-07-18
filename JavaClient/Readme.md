@@ -1,21 +1,5 @@
 # Cochlear.ai sense Java Client (alpha version)
 
-## Setup
-
-Include CochlearSense.jar on java build path
-
-(In case of Eclipse, import jar package on your project, right click on jar file -> Build path -> Add to build path)
-
-You need io.grpc package
-
-Maven example as follows
-
-  	<dependency>
-  		<groupId>io.grpc</groupId>
-  		<artifactId>grpc-all</artifactId>
-  		<version>1.13.1</version>
-  	</dependency>
-
 
 ## Making a call
 Example)
