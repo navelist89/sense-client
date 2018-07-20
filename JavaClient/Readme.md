@@ -27,6 +27,11 @@ Example)
         }
 
 
+You can get InputStream as parameter - considerations for Android
+Example)
+        client.senseKey(filename, (InputStream) new FileInputStream(filename));
+        client.senseEvent(filename, (InputStream) new FileInputStream(filename), subtask);
+
 1. Import CochlearSenseClient class from com.cohlear.ai package path
 2. Create the object using CochlearSenseClient(String) constructor, your apikey as a parameter
 3. Call a method, with an file name or path as a String parameter
