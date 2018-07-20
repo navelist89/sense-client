@@ -29,6 +29,8 @@ Example)
 
 You can get InputStream as parameter - considerations for Android
 Example)
+
+
         client.senseKey(filename, (InputStream) new FileInputStream(filename));
         client.senseEvent(filename, (InputStream) new FileInputStream(filename), subtask);
 
