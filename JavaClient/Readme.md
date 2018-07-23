@@ -28,6 +28,8 @@ Example)
 
 
 You can get InputStream as parameter - considerations for Android
+
+
 Example)
 
 
