@@ -1,0 +1,41 @@
+// Copyright 2017 Cochlear.ai All Rights Reserved.
+//
+
+syntax = "proto3";
+package cochlear.ai;
+option java_package = "com.cochlear.ai";
+
+message input {
+    bytes data = 1;
+    string subtask = 2;
+    string apikey = 4;
+}
+
+message output {
+    string pred = 3;
+}
+
+message input_sense {
+    bytes data = 5;
+    string task = 6;
+    string subtask = 7;
+}
+
+message output_sense {
+    string pred = 8;
+}
+
+
+service cochlear_sense {
+    rpc event_detection(input) returns (output) {}
+    rpc gender_detection(input) returns (output) {}
+    rpc key_detection(input) returns (output) {}
+    rpc tempo_detection(input) returns (output) {}
+    rpc genre_detection(input) returns (output) {}
+    rpc mood_detection(input) returns (output) {}
+    rpc music_speech_others_detection(input) returns (output) {}
+    rpc cochlear_sense(input_sense) returns (output_sense) {}
+}
+
+// Generate gRPC classes for Python
+// python -m grpc_tools.protoc -I. --descriptor_set_out=api_descriptor.pb --python_out=. --grpc_python_out=. cochlear_sense.proto
