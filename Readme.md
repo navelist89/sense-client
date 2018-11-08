@@ -11,6 +11,7 @@ Send us audio samples that are not working properly or tell us any issue during 
 
 ### Available task
 
+```
         'key' (music key detection)
         'tempo' (music tempo detection)
         'genre' (music genre detection)
@@ -22,7 +23,7 @@ Send us audio samples that are not working properly or tell us any issue during 
         in case of 'event', the following subtasks are available.
             ('babycry', 'carhorn', 'cough', 'dogbark', 'siren', 'snoring')
             if task is not 'event', subtask input will be ignored.
-
+```
 
 ## Quick Tutorial
 
