@@ -11,6 +11,7 @@ Send us audio samples that are not working properly or tell us any issue during 
 
 ### Available task
 
+```
         'key' (music key detection)
         'tempo' (music tempo detection)
         'genre' (music genre detection)
@@ -22,7 +23,7 @@ Send us audio samples that are not working properly or tell us any issue during 
         in case of 'event', the following subtasks are available.
             ('babycry', 'carhorn', 'cough', 'dogbark', 'siren', 'snoring')
             if task is not 'event', subtask input will be ignored.
-
+```
 
 ## Quick Tutorial
 
@@ -40,39 +41,52 @@ Every API key will be limited to 100 calls per method a day and expired after 30
         Daily Quota : 100 calls per method (3000 calls per method during alpha testing)
 
 
-### Step 2. Setup your environment
+### Step 2. Clone this repository
+This repository contains the library for the *Cochlear Sense API* call. Download or copy for use.
+```
+git clone https://github.com/cochlearai/sense-client
+```
+
+
+### Step 3. Setup your environment (Ubuntu)
 
 - python 2.7 version
-- pip required
+- pip is required
+- portaudio is required for streaming api
 
--- wget https://bootstrap.pypa.io/get-pip.py
+```
+wget https://bootstrap.pypa.io/get-pip.py
+python get-pip.py
+```
+or you can use apt-get command
+```
+apt-get install python-pip
+```
 
--- python get-pip.py
-
--- In ubuntu, you can 
-    apt-get install python-pip
-
-
+install portaudio 
+```
+apt install portaudio19-dev
+```
 #### (Optional) If you want to set pip environment on virtualenv
 
--- pip install virtualenv
-
--- virtualenv venv 
-
--- . venv/bin/activate
-
-- venv is activated. you must use pip within this venv
+```
+pip install virtualenv
+virtualenv venv 
+. venv/bin/activate
+```
+You can verify that the virtual environment is enabled through the prefix *(venv)* in the terminal window.
+You must use pip within this venv
 
 
 #### Common Settings for Development&runtime environment on base OS
+pip 10 or latest version is recommended for installing dependancies.
+```
+pip install --upgrade pip
+pip install --no-cache-dir -r requirements.txt
+```
 
--- pip install --upgrade pip==10.0.1
 
--- pip install --no-cache-dir -r requirements.txt
-
-
-
-### Step 3. Making your gRPC call
+### Step 4. Making your gRPC call
 
 Every prediction except music analysis ('key', 'tempo', 'genre') is based on 1 second decision unit. Your audio input should not be exceeded by 30 seconds length and 4MB size.
 
@@ -82,20 +96,21 @@ The prediction works only what model you run the input through. For example, if 
 
 For more examples, please refer /example/example.py and simple_example.py.
 
-        import sys
-        sys.path.append('path-of-cochlearai-package')
-        from cochlearai.client.sense import CochlearaiSenseApp
+```
+import sys
+sys.path.append('path-of-cochlearai-package')
+from cochlearai.client.sense import CochlearaiSenseApp
 
-        apikey = 'your-api-key'
+apikey = 'your-api-key'
 
-        app = CochlearaiSenseApp()
-        sensers = app.get_sensers()
+app = CochlearaiSenseApp()
+sensers = app.get_sensers()
 
-        filename = 'example_event.mp3'
-        task = 'event'
-        subtask = 'babycry'
-        res = sensers.predict(apikey, filename, task, subtask)
-
+filename = 'example_event.mp3'
+task = 'event'
+subtask = 'babycry'
+res = sensers.predict(apikey, filename, task, subtask)
+```
 
 
 
