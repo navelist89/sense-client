@@ -51,7 +51,8 @@ git clone https://github.com/cochlearai/sense-client
 ### Step 3. Setup your environment (Ubuntu)
 
 - python 2.7 version
-- pip required
+- pip is required
+- portaudio is required for streaming api
 
 ```
 wget https://bootstrap.pypa.io/get-pip.py
@@ -62,6 +63,10 @@ or you can use apt-get command
 apt-get install python-pip
 ```
 
+install portaudio 
+```
+apt install portaudio19-dev
+```
 #### (Optional) If you want to set pip environment on virtualenv
 
 ```
